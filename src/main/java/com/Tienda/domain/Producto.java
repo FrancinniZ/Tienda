@@ -33,10 +33,10 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
-
-    public Producto() {
-
-    }
+    
+   public Producto() {
+       
+   }
 
     public Producto(String descripcion, String detalle, double precio, int existencias, String rutaImagen, boolean activo, Categoria categoria) {
         this.descripcion = descripcion;

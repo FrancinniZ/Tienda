@@ -27,7 +27,7 @@ public class ProductoController {
 
     @GetMapping("/listado")
     public String inicio(Model model) {
-        List<Producto> listadoProductos = productoService.getProducto(false);
+        List<Producto> listadoProductos = productoService.getProductos(false);
         List<Categoria> categorias = categoriaService.getCategorias(true);
         model.addAttribute("productos", listadoProductos);
         model.addAttribute("categorias", categorias);
@@ -67,7 +67,7 @@ public class ProductoController {
 
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
-        producto = productoService.getProducto(producto);
+        producto = productoService.getProductos(producto);
          List<Categoria> categorias = categoriaService.getCategorias(true);
         model.addAttribute("producto", producto);
          model.addAttribute("categorias", categorias);
